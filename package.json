@@ -1,5 +1,5 @@
 {
-  "name": "@guideai/cli",
+  "name": "@guideai-dev/cli",
   "version": "0.1.0",
   "description": "Command line interface for GuideAI",
   "type": "module",
@@ -8,6 +8,14 @@
   "types": "./dist/esm/index.d.ts",
   "bin": {
     "guideai": "./dist/esm/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guideai-dev/guideai.git",
+    "directory": "packages/cli"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "exports": {
     ".": {
@@ -29,7 +37,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@guideai/types": "workspace:*",
+    "@guideai-dev/types": "workspace:*",
     "chalk": "^5.4.1",
     "commander": "^12.1.0",
     "open": "^10.2.0"
