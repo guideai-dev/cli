@@ -53,7 +53,7 @@ export async function getServerUrl(): Promise<string> {
   }
 
   const config = await loadConfig()
-  return config.serverUrl || 'http://localhost:3000'
+  return config.serverUrl || 'https://be.guideai.dev'
 }
 
 export async function clearConfig(): Promise<void> {

@@ -22,7 +22,7 @@ program
 program
   .command('login')
   .description('Authenticate with GuideAI server')
-  .option('--server <url>', 'Server URL', 'http://localhost:3000')
+  .option('--server <url>', 'Server URL', 'https://be.guideai.dev')
   .action(async options => {
     try {
       await loginFlow(options.server)
