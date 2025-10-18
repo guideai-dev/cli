@@ -205,7 +205,7 @@ async function getUserInfo(serverUrl: string, apiKey: string): Promise<{ usernam
     throw new Error(`Failed to get user info: ${response.status} ${response.statusText}`)
   }
 
-  const data = await response.json() as { authenticated?: boolean; user?: { username: string } }
+  const data = (await response.json()) as { authenticated?: boolean; user?: { username: string } }
 
   if (!data.authenticated || !data.user) {
     throw new Error('Invalid API key or user not found')

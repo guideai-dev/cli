@@ -13,10 +13,7 @@ const program = new Command()
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const packageJson = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf-8'))
 
-program
-  .name('guideai')
-  .description('CLI for GuideAI')
-  .version(packageJson.version)
+program.name('guideai').description('CLI for GuideAI').version(packageJson.version)
 
 // Authentication commands
 program
