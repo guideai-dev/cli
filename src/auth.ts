@@ -16,7 +16,7 @@ export async function loginFlow(serverUrl: string): Promise<void> {
 
   try {
     // Open browser to auth endpoint
-    const authUrl = `${serverUrl}/auth/cli?redirect_uri=${encodeURIComponent(callbackUrl)}`
+    const authUrl = `${serverUrl}/auth/desktop?redirect_uri=${encodeURIComponent(callbackUrl)}`
     console.log(chalk.gray(`Opening browser to: ${authUrl}`))
 
     await open(authUrl)
