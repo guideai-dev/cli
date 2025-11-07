@@ -6,12 +6,19 @@ import { fileURLToPath } from 'node:url'
 import chalk from 'chalk'
 import { Command } from 'commander'
 import { loginFlow, logoutFlow, whoAmI } from './auth.js'
+import { validateCommand, validateWatch } from './validate.js'
 
 const program = new Command()
 
 // Get package version
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const packageJson = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf-8'))
+// Try both paths: ../package.json (when running from src) and ../../package.json (when running from dist)
+let packageJson
+try {
+	packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'))
+} catch {
+	packageJson = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf-8'))
+}
 
 program.name('guideai').description('CLI for GuideAI').version(packageJson.version)
 
@@ -47,6 +54,28 @@ program
   .action(async () => {
     try {
       await whoAmI()
+    } catch (error) {
+      console.error(chalk.red('Error:'), error instanceof Error ? error.message : 'Unknown error')
+      process.exit(1)
+    }
+  })
+
+// Validation command
+program
+  .command('validate <path>')
+  .description('Validate canonical JSONL files')
+  .option('--strict', 'Treat warnings as errors')
+  .option('--json', 'Output JSON format')
+  .option('--verbose', 'Show detailed error information')
+  .option('--watch', 'Watch for file changes and re-validate')
+  .option('--provider <name>', 'Filter by provider name (e.g., "cursor", "claude", "gemini")')
+  .action(async (path, options) => {
+    try {
+      if (options.watch) {
+        await validateWatch(path, options)
+      } else {
+        await validateCommand(path, options)
+      }
     } catch (error) {
       console.error(chalk.red('Error:'), error instanceof Error ? error.message : 'Unknown error')
       process.exit(1)

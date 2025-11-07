@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@guideai-dev/types": "workspace:*",
+    "@guideai-dev/session-processing": "workspace:*",
     "chalk": "^5.4.1",
     "commander": "^12.1.0",
     "open": "^10.2.0"
