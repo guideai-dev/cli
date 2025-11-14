@@ -36,8 +36,8 @@
     "lint:fix": "biome lint --write src"
   },
   "dependencies": {
-    "@guideai-dev/types": "workspace:*",
-    "@guideai-dev/session-processing": "workspace:*",
+    "@guideai-dev/types": "^0.1.39",
+    "@guideai-dev/session-processing": "^0.1.39",
     "chalk": "^5.4.1",
     "commander": "^12.1.0",
     "open": "^10.2.0"
