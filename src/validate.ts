@@ -11,7 +11,7 @@ import {
 	validateJSONL,
 	generateValidationReport,
 	type JSONLValidationResult
-} from '@guideai-dev/session-processing/validation'
+} from '@guidemode/session-processing/validation'
 
 interface ValidateOptions {
 	strict?: boolean
@@ -94,7 +94,7 @@ export async function validateCommand(
 ): Promise<void> {
 	// Only show headers if not in JSON mode
 	if (!options.json) {
-		console.log(chalk.bold('GuideAI Canonical JSONL Validator'))
+		console.log(chalk.bold('GuideMode Canonical JSONL Validator'))
 		console.log(chalk.gray('─'.repeat(50)))
 	}
 

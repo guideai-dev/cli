@@ -20,13 +20,13 @@ try {
 	packageJson = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf-8'))
 }
 
-program.name('guideai').description('CLI for GuideAI').version(packageJson.version)
+program.name('guidemode').description('CLI for GuideMode').version(packageJson.version)
 
 // Authentication commands
 program
   .command('login')
-  .description('Authenticate with GuideAI server')
-  .option('--server <url>', 'Server URL', 'https://be.guideai.dev')
+  .description('Authenticate with GuideMode server')
+  .option('--server <url>', 'Server URL', 'https://app.guidemode.dev')
   .action(async options => {
     try {
       await loginFlow(options.server)

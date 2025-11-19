@@ -75,14 +75,14 @@ export async function whoAmI(): Promise<void> {
 
   if (!config.apiKey || !config.username) {
     console.log(chalk.yellow('▶ Not currently logged in'))
-    console.log(chalk.gray('Run "guideai login" to authenticate'))
+    console.log(chalk.gray('Run "guidemode login" to authenticate'))
     return
   }
 
   try {
     if (!config.serverUrl) {
       console.log(chalk.red('✗ No server URL configured'))
-      console.log(chalk.gray('Run "guideai login" to authenticate'))
+      console.log(chalk.gray('Run "guidemode login" to authenticate'))
       return
     }
     const userInfo = await getUserInfo(config.serverUrl, config.apiKey)
@@ -91,7 +91,7 @@ export async function whoAmI(): Promise<void> {
     console.log(chalk.gray(`API Key: ${config.apiKey.substring(0, 12)}...`))
   } catch (_error) {
     console.log(chalk.red('✗ Invalid credentials'))
-    console.log(chalk.gray('Run "guideai login" to re-authenticate'))
+    console.log(chalk.gray('Run "guidemode login" to re-authenticate'))
   }
 }
 
@@ -133,7 +133,7 @@ async function startCallbackServer(): Promise<{ server: Server; callbackUrl: str
             <html>
               <body style="font-family: system-ui; padding: 40px; text-align: center;">
                 <h1 style="color: #059669;">Authentication Successful!</h1>
-                <p>You have been authenticated with the GuideAI CLI${tenantInfo}.</p>
+                <p>You have been authenticated with the GuideMode CLI${tenantInfo}.</p>
                 <p style="color: #6b7280;">You can close this browser window and return to your terminal.</p>
               </body>
             </html>

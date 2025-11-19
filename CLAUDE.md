@@ -1,6 +1,6 @@
-# CLI - GuideAI Command Line Interface
+# CLI - GuideMode Command Line Interface
 
-Commander.js-based CLI for interacting with the GuideAI server, featuring authentication and API integration.
+Commander.js-based CLI for interacting with the GuideMode server, featuring authentication and API integration.
 
 ## Architecture
 
@@ -111,8 +111,8 @@ When adding tests in the future:
 To check the CLI package from the workspace root:
 
 ```bash
-pnpm --filter @guideai-dev/cli lint
-pnpm --filter @guideai-dev/cli build
+pnpm --filter @guidemode/cli lint
+pnpm --filter @guidemode/cli build
 ```
 
 ## CLI Commands
@@ -121,7 +121,7 @@ pnpm --filter @guideai-dev/cli build
 
 **Login**:
 ```bash
-guideai login [--server <url>]
+guidemode login [--server <url>]
 ```
 - **Default Server**: `http://localhost:3000`
 - **Flow**: Opens browser for OAuth authentication
@@ -129,14 +129,14 @@ guideai login [--server <url>]
 
 **Logout**:
 ```bash
-guideai logout
+guidemode logout
 ```
 - Removes stored authentication token
 - Confirms successful logout
 
 **Who Am I**:
 ```bash
-guideai whoami
+guidemode whoami
 ```
 - Shows current authenticated user
 - Displays authentication status
@@ -174,7 +174,7 @@ guideai whoami
 ```json
 {
   "bin": {
-    "guideai": "./dist/esm/cli.js"
+    "guidemode": "./dist/esm/cli.js"
   }
 }
 ```
@@ -197,7 +197,7 @@ guideai whoami
 ## Dependencies
 
 ### Runtime
-- `@guideai/types`: Shared TypeScript definitions
+- `@guidemode/types`: Shared TypeScript definitions
 - `chalk`: Terminal colors and styling
 - `commander`: CLI framework and argument parsing
 - `open`: Cross-platform browser opening
@@ -212,16 +212,16 @@ guideai whoami
 ### Basic Authentication
 ```bash
 # Login to default server
-guideai login
+guidemode login
 
 # Login to custom server
-guideai login --server https://api.guideai.com
+guidemode login --server https://api.guidemode.com
 
 # Check authentication status
-guideai whoami
+guidemode whoami
 
 # Logout
-guideai logout
+guidemode logout
 ```
 
 ### Development

@@ -1,17 +1,17 @@
 {
-  "name": "@guideai-dev/cli",
+  "name": "@guidemode/cli",
   "version": "0.1.39",
-  "description": "Command line interface for GuideAI",
+  "description": "Command line interface for GuideMode",
   "type": "module",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "bin": {
-    "guideai": "./dist/esm/cli.js"
+    "guidemode": "./dist/esm/cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guideai-dev/cli.git"
+    "url": "https://github.com/guidemode/cli.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -36,8 +36,8 @@
     "lint:fix": "biome lint --write src"
   },
   "dependencies": {
-    "@guideai-dev/types": "workspace:*",
-    "@guideai-dev/session-processing": "workspace:*",
+    "@guidemode/types": "workspace:*",
+    "@guidemode/session-processing": "workspace:*",
     "chalk": "^5.4.1",
     "commander": "^12.1.0",
     "open": "^10.2.0"

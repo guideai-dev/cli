@@ -1,13 +1,13 @@
-# @guideai-dev/cli
+# @guidemode/cli
 
-> **Command-line interface for GuideAI.**
+> **Command-line interface for GuideMode.**
 
-A simple CLI for authenticating with GuideAI and managing sessions from your terminal.
+A simple CLI for authenticating with GuideMode and managing sessions from your terminal.
 
 ## Installation
 
 ```bash
-npm install -g @guideai-dev/cli
+npm install -g @guidemode/cli
 ```
 
 ## Usage
@@ -15,14 +15,14 @@ npm install -g @guideai-dev/cli
 ### Authentication
 
 ```bash
-# Login to GuideAI
-guideai login
+# Login to GuideMode
+guidemode login
 
 # Check who you're logged in as
-guideai whoami
+guidemode whoami
 
 # Logout
-guideai logout
+guidemode logout
 ```
 
 That's it! The CLI shares authentication with the desktop app, so you only need to login once.
@@ -37,12 +37,12 @@ Perfect for CI/CD pipelines, scripts, or terminal-focused workflows.
 
 ## Configuration
 
-Shares config with desktop app: `~/.guideai/config.json`
+Shares config with desktop app: `~/.guidemode/config.json`
 
 ```json
 {
   "apiKey": "your-api-key",
-  "serverUrl": "https://be.guideai.dev",
+  "serverUrl": "https://app.guidemode.dev",
   "username": "your-username"
 }
 ```
@@ -52,7 +52,7 @@ Shares config with desktop app: `~/.guideai/config.json`
 ### Build from Source
 
 ```bash
-git clone https://github.com/guideai-dev/cli.git
+git clone https://github.com/guidemode-dev/cli.git
 cd cli
 pnpm install
 pnpm build
@@ -71,8 +71,8 @@ pnpm build
 
 ## Related Packages
 
-- [@guideai-dev/desktop](https://github.com/guideai-dev/desktop) - Desktop app
-- [@guideai-dev/types](https://github.com/guideai-dev/types) - Shared types
+- [@guidemode/desktop](https://github.com/guidemode-dev/desktop) - Desktop app
+- [@guidemode/types](https://github.com/guidemode-dev/types) - Shared types
 
 ## License
 
@@ -80,6 +80,6 @@ MIT License - see [LICENSE](LICENSE)
 
 ## Support
 
-- 💬 [**Discussions**](https://github.com/orgs/guideai-dev/discussions) - Ask questions, share ideas
-- 🐛 [**Issues**](https://github.com/guideai-dev/desktop/issues) - Report bugs, request features
-- 📧 **Email**: support@guideai.dev
+- 💬 [**Discussions**](https://github.com/orgs/guidemode-dev/discussions) - Ask questions, share ideas
+- 🐛 [**Issues**](https://github.com/guidemode-dev/desktop/issues) - Report bugs, request features
+- 📧 **Email**: support@guidemode.dev
